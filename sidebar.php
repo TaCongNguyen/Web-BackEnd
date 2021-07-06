@@ -31,12 +31,15 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+            <?php if($_SESSION['login_type'] == 1): ?>
               <li class="nav-item">
-                <a href="./index.php?page=new_music" class=" ml-1 nav-link nav-new_music tree-item">
+              <a href="./index.php?page=new_music" class=" ml-1 nav-link nav-new_music tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p class="">Thêm mới bài hát</p>
                 </a>
-              </li>
+              </li> 
+            <?php endif; ?>
+              
               <li class="nav-item">
                 <a href="./index.php?page=music_list" class=" ml-1 nav-link nav-music_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
