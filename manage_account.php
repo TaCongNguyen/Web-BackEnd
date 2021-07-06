@@ -106,11 +106,11 @@ foreach($qry as $k => $v){
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast("Account successfully updated","success")
+					alert_toast("Cập nhật thành công","success")
 					$('.modal').modal('hide')
 					end_load()
 				}else if(resp == 2){
-					$('#msg').html("<div class='alert alert-danger'>Email already exist.</div>");
+					$('#msg').html("<div class='alert alert-danger'>Email đã tồn tại.</div>");
 					$('[name="email"]').addClass("border-danger")
 					end_load()
 				}
@@ -124,9 +124,9 @@ foreach($qry as $k => $v){
 			$('#pass_match').attr('data-status','')
 		}else{
 			if(cpass == pass){
-				$('#pass_match').attr('data-status','1').html('<i class="text-success">Password Matched.</i>')
+				$('#pass_match').attr('data-status','1').html('<i class="text-success">Password hợp.</i>')
 			}else{
-				$('#pass_match').attr('data-status','2').html('<i class="text-danger">Password does not match.</i>')
+				$('#pass_match').attr('data-status','2').html('<i class="text-danger">Password không hợp nhau.</i>')
 			}
 		}
 	})

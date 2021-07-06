@@ -61,7 +61,7 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.delete_music').click(function(){
-	_conf("Are you sure to delete this music?","delete_music",[$(this).attr('data-id')])
+	_conf("Bạn có chắc muốn xoá ?","delete_music",[$(this).attr('data-id')])
 	})
 	$('#manage_music').click(function(){
 		uni_modal("New music",'manage_music.php')
@@ -79,7 +79,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Xoá thành công",'success')
 					$('.modal').modal('hide')
 					_redirect(document.href)
 					end_load()

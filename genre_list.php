@@ -49,15 +49,15 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.delete_genre').click(function(){
-	_conf("Are you sure to delete this Genre?","delete_genre",[$(this).attr('data-id')])
+	_conf("Bạn có muốn xoá thật sự?","delete_genre",[$(this).attr('data-id')])
 	})
 	$('#manage_genre').click(function(e){
 		e.preventDefault()
-		uni_modal("New Genre",'manage_genre.php')
+		uni_modal("Thể loại mới",'manage_genre.php')
 	})
 	$('.edit_genre').click(function(e){
 		e.preventDefault()
-		uni_modal("Edit Genre",'manage_genre.php?id='+$(this).attr('data-id'))
+		uni_modal("Chỉnh sửa",'manage_genre.php?id='+$(this).attr('data-id'))
 	})
 	check_list()
 	})
@@ -69,7 +69,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Xoá thành công",'success')
 					$('.modal').modal('hide')
 					_redirect(document.href)
 					end_load()

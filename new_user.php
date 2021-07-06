@@ -135,11 +135,11 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved.',"success");
+					alert_toast('Lưu thành công.',"success");
 					_redirect('index.php?page=user_list')
 					end_load()
 				}else if(resp == 2){
-					$('#msg').html("<div class='alert alert-danger'>Email already exist.</div>");
+					$('#msg').html("<div class='alert alert-danger'>Email đã tồn tại.</div>");
 					$('[name="email"]').addClass("border-danger")
 					end_load()
 				}

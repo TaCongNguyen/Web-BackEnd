@@ -99,7 +99,7 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved',"success");
+					alert_toast('Lưu thành công',"success");
 					setTimeout(function(){
             end_load()
               _redirect('index.php?page=music_list')

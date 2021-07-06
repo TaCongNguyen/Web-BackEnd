@@ -81,7 +81,7 @@ $items = $conn->query("SELECT p.*,m.title,m.artist,m.upath FROM playlist_items p
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data succsfully saved',"success");
+					alert_toast('Lưu thành công',"success");
 					$('.modal').modal('hide')
 					_redirect('index.php?page=view_playlist&id=<?php echo $_GET['pid'] ?>')
 					end_load()
@@ -129,12 +129,12 @@ $items = $conn->query("SELECT p.*,m.title,m.artist,m.upath FROM playlist_items p
 		}
 	})
 	function li_func(){
-		$('#msearch').val('')
+		
 		$('.suggest-item').click(function(){
 			var data = $(this).attr('data-json')
 				data = JSON.parse(data)
 			if($('#plist tbody').find('tr[data-id="'+data.id+'"]').length > 0){
-				alert_toast("Music already on the list","error")
+				alert_toast("Bài hát đã có trong playlist","error")
 				return false;
 			}
 

@@ -49,7 +49,7 @@ if(isset($_GET['id'])){
 			    type: 'POST',
 				success:function(resp){
 					if(resp == 1){
-						alert_toast("Data successfully saved.","success");
+						alert_toast("Lưu thành công.","success");
 						setTimeout(function(){
 							end_load()
             				$('.modal').modal('hide')
