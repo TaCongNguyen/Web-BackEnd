@@ -21,7 +21,9 @@ if (mysqli_num_rows($result) > 0)
 			
 				<title>Lấy lại mật khẩu của bạn</title>
 				<!-- CSS -->
+				
 				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+				
 			</head>
 			<body>
 				<div class="container">
@@ -50,5 +52,6 @@ if (mysqli_num_rows($result) > 0)
 }
 else
 {
-	echo "Email does not exists";
+	echo "Email không tồn tại";
 }
+?>
