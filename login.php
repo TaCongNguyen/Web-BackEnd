@@ -61,6 +61,9 @@ header("location:index.php?page=home");
   						<div class="form-group">
   							<input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu">
   						</div>
+						<div class="link forget-pass text-left">
+							<a href="forget-password.php">Forgot password?</a>
+						</div>
   						<center><button class="btn btn-block btn-wave btn-primary bg-gradient-primary">Đăng nhập</button></center>
   						<hr>
 

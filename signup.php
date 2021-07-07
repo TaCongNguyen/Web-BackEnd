@@ -92,7 +92,7 @@
 				if(resp == 1){
 					location.replace("index.php?page=home")
 				}else if(resp ==2){
-					$('#msg').html("<div class='alert alert-danger'>Email already exist.</div>")
+					$('#msg').html("<div class='alert alert-danger'>Email đã tồn tại.</div>")
 					end_load()
 				}
 			}
