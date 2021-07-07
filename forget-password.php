@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
-      <title>Send Reset Password Link with Expiry Time in PHP MySQL</title>
+      <title>Lấy lại mật khẩu của bạn</title>
        <!-- CSS -->
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
    </head>
@@ -12,14 +12,14 @@
       <div class="container">
           <div class="card">
             <div class="card-header text-center">
-              Send Reset Password Link with Expiry Time in PHP MySQL
+              Lấy lại mật khẩu
             </div>
             <div class="card-body">
               <form action="send-recovery-mail.php" method="post">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputEmail1">Email </label>
                   <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  <small id="emailHelp" class="form-text text-muted">Chúng tôi sẽ không tiết lộ email của bạn với ai.</small>
                 </div>
                 <input type="submit" name="password-reset-token" class="btn btn-primary">
               </form>

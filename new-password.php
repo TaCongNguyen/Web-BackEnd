@@ -15,10 +15,29 @@ if (mysqli_num_rows($result) > 0)
 		$sql = "UPDATE users SET reset_token='', password='$new_password' WHERE email='$email'";
 		mysqli_query($connection, $sql);
 
-		echo "Password has been changed";
+		echo "Mật khẩu của bạn đã thay đổi";
 	
 }
 else
 {
-	echo "Email does not exists";
+	echo "Email không tồn tại";
 }
+?>
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+      <title>Lấy lại mật khẩu của bạn</title>
+       <!-- CSS -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   </head>
+   <body>
+   <div class="text-left">
+		<a href="login.php">Nhấn vào đây để đăng nhập lại.</a>
+	</div>
+   </body>
+     
+</html>

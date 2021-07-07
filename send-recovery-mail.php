@@ -1,11 +1,10 @@
 <?php
 
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Load Composer's autoloader
+
 require 'vendor/autoload.php';
 
 $connection = mysqli_connect("localhost", "root", "", "music_db");
@@ -20,7 +19,7 @@ if (mysqli_num_rows($result) > 0)
 	$sql = "UPDATE users SET reset_token='$reset_token' WHERE email='$email'";
 	mysqli_query($connection, $sql);
 
-	$message = "<p>Please click the link below to reset your password</p>";
+	$message = "<p>Bạn đang thay đổi mật khẩu. Hãy click vào link dưới để xác nhận</p>";
 	$message .= "<a href='https://localhost/music/Web-Backend/reset-password.php?email=$email&reset_token=$reset_token'>";
 		$message .= "Reset password";
 	$message .= "</a>";
@@ -47,7 +46,7 @@ function send_mail($to, $subject, $message)
 	    $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
 	    $mail->Port       = 587;                                    // TCP port to connect to
 
-	    $mail->setFrom('congnguyenta07102000@gmail.com', 'Admin Nguyên');
+	    $mail->setFrom('congnguyenta07102000@gmail.com', 'Admin GenMusic');
 	    //Recipients
 	    $mail->addAddress($to);
 
@@ -57,8 +56,8 @@ function send_mail($to, $subject, $message)
 	    $mail->Body    = $message;
 
 	    $mail->send();
-	    echo 'Message has been sent';
+	    echo 'Một email xác nhận đã được gửi tới cho bạn';
 	} catch (Exception $e) {
-	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+	    echo "Đã có lỗi xảy ra. Mailer Error: {$mail->ErrorInfo}";
 	}
 }
