@@ -20,7 +20,7 @@ else
     {
     echo "Please fill Name and Email";
     }
-/*
+
 $toEmail = "connguyenta07102000@gmail.com";
 $mailHeaders = "From: " . $_POST["name"] . "<". $_POST["email"] .">\r\n";
 if(mail($toEmail, $_POST["comments"], $_POST["subject"], $mailHeaders)) {
@@ -28,5 +28,5 @@ echo"<p class='success'>Chúng tôi đã nhận được phản hồi của bạ
 } else {
 echo"<p class='Error'>Đã có vấn đề xảy ra.</p>";
 }
-*/
+
 ?>

@@ -28,12 +28,81 @@
           </div>
         </div>
       </div>
+      
+      <div class="row">
+        <div class="col-12 col-md-12 ">
+          <span><h2 class="text-primary">Có thể bạn thích</h2></span>
+        </div>
+      </div>
+      <!--Playlist -->
+      <div class="row">
+        <div class="col-12 col-md-12 ">
+          <div class="row" id="playlist-list">
+            <?php 
+              $playlist= $conn->query("SELECT * FROM playlist order by title asc");
+              while($row=$playlist->fetch_assoc()):
+            ?>
+            <div class="card bg-black playlist-item my-2 mx-1" date-id="<?php echo $row['id'] ?>" style="width:15vw">
+              <div class="card-img-top flex-w-100 position-relative">
+                <?php if($_SESSION['login_type'] == 1 || $_SESSION['login_id'] == $row['user_id'] ): ?>
+                          <div class="dropdown position-absolute" style="right:.5em;top:.5em">
+                            <button type="button" class="btn btn-tool py-1" data-toggle="dropdown" title="Manage" style="background: #000000ab;">
+                              <i class="fa fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu bg-dark">
+                            <button class="dropdown-item manage_playlist bg-dark" data-id="<?php echo $row['id'] ?>" type="button">Quản lí danh sách</button>
+                            <button class="dropdown-item edit_playlist bg-dark" data-id="<?php echo $row['id'] ?>" type="button">Sửa</button>
+                            <button class="dropdown-item delete_playlist bg-dark" data-id="<?php echo $row['id'] ?>" type="button">Xoá</button>
+                            </div>
+                            </div>
+                        <?php endif; ?>
+            <a href="index.php?page=view_playlist&id=<?php echo $row['id'] ?>">
+                <img src="assets/uploads/<?php echo $row['cover_image'] ?>" class="card-img-top"  style="object-fit: cover;max-width: 100%;height:26vh" alt="playlist Cover">
+              </div>
+              <div class="card-body" style="height: 20vh">
+                <div class="card-title"><?php echo ucwords($row['title']) ?></div>
+                <p class="card-text truncate text-white"><?php echo $row['description'] ?></p>
+              </div>
+            </a>
+            </div>
+            <?php endwhile; ?>
+          </div>
+        </div>
+      </div>
 
       <div class="row">
-        <div class="col-12 col-md-12 mx-auto">
-          
+        <div class="col-12 col-md-12 ">
+        <div class="row" id="genre-list">
+            <?php 
+              $genres= $conn->query("SELECT * FROM genres order by genre asc");
+              while($row=$genres->fetch_assoc()):
+            ?>
+            <div class="card bg-black genre-item my-2 mx-1" date-id="<?php echo $row['id'] ?>" style="width:15vw">
+              <div class="card-img-top flex-w-100 position-relative">
+                <?php if($_SESSION['login_type'] == 1): ?>
+                          <div class="dropdown position-absolute" style="right:.5em;top:.5em">
+                            <button type="button" class="btn btn-tool py-1" data-toggle="dropdown" title="Manage" style="background: #000000ab;">
+                              <i class="fa fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu bg-dark">
+                            <button class="dropdown-item edit_genre bg-dark" data-id="<?php echo $row['id'] ?>" type="button">Sửa</button>
+                            <button class="dropdown-item delete_genre bg-dark" data-id="<?php echo $row['id'] ?>" type="button">Xoá</button>
+                            </div>
+                            </div>
+                        <?php endif; ?>
+            <a href="index.php?page=view_genre&id=<?php echo $row['id'] ?>">
+                <img src="assets/uploads/<?php echo $row['cover_photo'] ?>" class="card-img-top"  style="object-fit: cover;max-width: 100%;height:26vh" alt="Genre Cover">
+              </div>
+              <div class="card-body" style="height: 20vh">
+                <div class="card-title"><?php echo ucwords($row['genre']) ?></div>
+                <p class="card-text truncate text-white"><?php echo $row['description'] ?></p>
+              </div>
+              </a>
+            </div>
+            <?php endwhile; ?>
+	        </div>
         </div>
-        </div>
+      </div>
 <!-- Info boxes -->
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
