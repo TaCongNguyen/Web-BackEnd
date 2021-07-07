@@ -13,13 +13,37 @@ if (mysqli_num_rows($result) > 0)
 	
 	
 		?>
-		<form method="POST" action="new-password.php">
-			<input type="hidden" name="email" value="<?php echo $email; ?>">
-			<input type="hidden" name="reset_token" value="<?php echo $reset_token; ?>">
+		<!doctype html>
+			<html lang="en">
+			<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			
-			<input type="password" name="new_password" placeholder="Enter new password">
-			<input type="submit" value="Change password">
-		</form>
+				<title>Lấy lại mật khẩu của bạn</title>
+				<!-- CSS -->
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+			</head>
+			<body>
+				<div class="container">
+					<div class="card">
+						<div class="card-header text-center">
+						Lấy lại mật khẩu
+						</div>
+						<div class="card-body">
+						<form method="POST" action="new-password.php">
+							<input type="hidden" name="email" class="form-control" value="<?php echo $email; ?>">
+							<input type="hidden" name="reset_token" class="form-control" value="<?php echo $reset_token; ?>">
+							
+							<input type="password" name="new_password" placeholder="Nhập mật khẩu mới">
+							<input type="submit" class="btn btn-primary" value="Change password">
+						</form>
+						</div>
+					</div>
+				</div>
+			
+			</body>
+			</html>
+		
 		<?php
 	
 	
