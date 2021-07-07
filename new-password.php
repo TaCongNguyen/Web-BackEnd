@@ -2,7 +2,7 @@
 
 $email = $_POST["email"];
 $reset_token = $_POST["reset_token"];
-$new_password = $_POST["new_password"];
+$new_password = md5($_POST["new_password"]);
 
 $connection = mysqli_connect("localhost", "root", "", "music_db");
 
