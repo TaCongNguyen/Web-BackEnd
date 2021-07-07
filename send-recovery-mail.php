@@ -61,3 +61,4 @@ function send_mail($to, $subject, $message)
 	    echo "Đã có lỗi xảy ra. Mailer Error: {$mail->ErrorInfo}";
 	}
 }
+?>
