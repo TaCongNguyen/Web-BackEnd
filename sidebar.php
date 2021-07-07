@@ -61,6 +61,14 @@
                   <p>Thể loại</p>
                 </a>
           </li>  
+          <?php if($_SESSION['login_type'] != 1): ?>
+          <li class="nav-item">
+                <a href="./index.php?page=contact" class="nav-link nav-user_list tree-item">
+                  <i class="fas fa-users nav-icon  text-gradient-primary"></i>
+                  <p>Liên hệ</p>
+                </a>
+          </li> 
+          <?php endif; ?>
           <?php if($_SESSION['login_type'] == 1): ?>
           <li class="nav-item">
                 <a href="./index.php?page=user_list" class="nav-link nav-user_list tree-item">
