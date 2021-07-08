@@ -48,6 +48,32 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-is-tree nav-edit_music nav-view_music">
+              <i class="nav-icon fa fa-music text-gradient-primary"></i>
+              <p>
+                Tin tức âm nhạc
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <?php if($_SESSION['login_type'] == 1): ?>
+              <li class="nav-item">
+              <a href="./index.php?page=new_news" class=" ml-1 nav-link nav-new_music tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p class="">Thêm mới tin tức</p>
+                </a>
+              </li> 
+            <?php endif; ?>
+              
+              <li class="nav-item">
+                <a href="./index.php?page=news_list" class=" ml-1 nav-link nav-music_list tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p class="">Danh sách tin tức</p>
+                </a>
+              </li>
+            </ul>
+          </li>
          
           <li class="nav-item">
                 <a href="./index.php?page=playlist" class="nav-link nav-playlist tree-item">

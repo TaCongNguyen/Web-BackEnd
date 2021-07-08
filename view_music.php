@@ -21,7 +21,7 @@ foreach($qry as $k => $v){
 		</div>
 		<div class="col-md-8">
 			<h5 class="text-white">Tên <?php echo ucwords($mtitle); ?></h5>
-			<h6 class="text-white">nghệ sĩ: <?php echo ucwords($artist); ?></h6>
+			<h6 class="text-white">Nghệ sĩ: <?php echo ucwords($artist); ?></h6>
 			<h6 class="text-white">Thể loại <?php echo ucwords($genre); ?></h6>
 			<h6 class="text-white border-bottom border-primary"><b class="text-white">Mô tả</b></h6>
 			<div class="text-white">

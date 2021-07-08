@@ -61,8 +61,18 @@ if($action == 'save_music'){
 	if($save)
 		echo $save;
 }
+if($action == 'save_news'){
+	$save = $crud->save_news();
+	if($save)
+		echo $save;
+}
 if($action == 'delete_music'){
 	$delete = $crud->delete_music();
+	if($delete)
+		echo $delete;
+}
+if($action == 'delete_news'){
+	$delete = $crud->delete_news();
 	if($delete)
 		echo $delete;
 }

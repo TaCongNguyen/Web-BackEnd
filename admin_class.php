@@ -272,9 +272,49 @@ Class Action {
 			return 1;
 		}
 	}
+	function save_news(){
+		extract($_POST);
+		$data = "";
+
+		foreach($_POST as $k => $v){
+			if(!in_array($k, array('id','cover','item_code')) && !is_numeric($k)){
+				if($k == 'description')
+					$v = htmlentities(str_replace("'","&#x2019;",$v));
+				if(empty($data)){
+					$data .= " $k='$v' ";
+				}else{
+					$data .= ", $k='$v' ";
+				}
+			}
+			}
+			$data .=",user_id = '{$_SESSION['login_id']}' ";
+		if(isset($_FILES['cover']) && $_FILES['cover']['tmp_name'] != ''){
+			$fname = strtotime(date('y-m-d H:i')).'_'.$_FILES['cover']['name'];
+			$move = move_uploaded_file($_FILES['cover']['tmp_name'],'assets/uploads/'. $fname);
+			$data .= ", cover_image = '$fname' ";
+		}
+		
+		if(empty($id)){
+			if(empty($_FILES['cover']['tmp_name']))
+			$data .= ", cover_image = 'default_cover.jpg' ";
+			$save = $this->db->query("INSERT INTO news set $data");
+		}else{
+			$save = $this->db->query("UPDATE news set $data where id = $id");
+		}
+		if($save){
+			return 1;
+		}
+	}
 	function delete_music(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM uploads where id = $id");
+		if($delete){
+			return 1;
+		}
+	}
+	function delete_news(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM news where id = $id");
 		if($delete){
 			return 1;
 		}

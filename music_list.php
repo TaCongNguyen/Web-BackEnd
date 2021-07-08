@@ -17,7 +17,7 @@
               </div>
           </div>
 		</div>
-		<a class="btn btn-sm btn-primary bg-gradient-primary" href="index.php?page=new_music"><i class="fa fa-plus"></i> Thêm bài hát mới</a>
+		
 	</div>
 	<button class="btn btn-primary" id="play_all">Chơi tất cả</button>
 	<div class="row" id="music-list">
@@ -61,7 +61,7 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.delete_music').click(function(){
-	_conf("Bạn có chắc muốn xoá ?","delete_music",[$(this).attr('data-id')])
+	_conf("Bạn có muốn xoá playlist?","delete_music",[$(this).attr('data-id')])
 	})
 	$('#manage_music').click(function(){
 		uni_modal("New music",'manage_music.php')
@@ -79,7 +79,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Xoá thành công",'success')
+					alert_toast("Thành công",'success')
 					$('.modal').modal('hide')
 					_redirect(document.href)
 					end_load()

@@ -79,7 +79,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Lưu thành công",'success')
+					alert_toast("Thành công",'success')
 					$('.modal').modal('hide')
 					_redirect(document.href)
 					end_load()
