@@ -50,7 +50,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link nav-is-tree nav-edit_music nav-view_music">
-              <i class="nav-icon fa fa-music text-gradient-primary"></i>
+              <i class="nav-icon fas fa-newspaper text-gradient-primary"></i>
               <p>
                 Tin tức âm nhạc
                 <i class="right fas fa-angle-left"></i>
