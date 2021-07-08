@@ -13,12 +13,39 @@ if((isset($_POST['name'])&& $_POST['name'] !='') && (isset($_POST['email'])&& $_
     }
     else
     {
-        echo "Thank you! We will contact you soon";
+        ?>
+        
+        <div class="jumbotron text-center">
+        <h3 class="display-3">Cảm ơn đã liên hệ với chúng tôi!</h3>
+        <p class="lead"><strong>Hãy kiểm tra email của bạn thường xuyên</strong> để xem phản hồi của chúng tôi.</p>
+        <hr>
+        <p>
+            Có vấn đề khác? <a href="./index.php?page=contact"> Liên hệ chúng tôi</a>
+        </p>
+        <p class="lead">
+            <a class="btn btn-primary " href="./index.php?page=home" role="button">Trở về trang chủ</a>
+        </p>
+        </div>
+        <?php
+        
     }
 }
 else
     {
-    echo "Please fill Name and Email";
+        ?>
+        
+        <div class="jumbotron text-center">
+        <h3 class="display-3">Có lỗi xảy ra</h3>
+        <p class="lead"><strong>Bạn chưa điền thông tin</p>
+        <hr>
+        <p>
+            Có vấn đề khác? <a href="./index.php?page=contact"> Liên hệ chúng tôi</a>
+        </p>
+        <p class="lead">
+            <a class="btn btn-primary " href="./index.php?page=home" role="button">Trở về trang chủ</a>
+        </p>
+        </div>
+        <?php
     }
 /*
 $toEmail = "connguyenta07102000@gmail.com";
@@ -30,3 +57,6 @@ echo"<p class='Error'>Đã có vấn đề xảy ra.</p>";
 }
 */
 ?>
+ <head>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>

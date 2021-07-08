@@ -20,7 +20,7 @@
 			$genres= $conn->query("SELECT * FROM genres order by genre asc");
 			while($row=$genres->fetch_assoc()):
 		?>
-		<div class="card bg-black genre-item my-2 mx-1" date-id="<?php echo $row['id'] ?>" style="width:15vw">
+		<div class="card bg-black genre-item my-2 mx-0 rounded" date-id="<?php echo $row['id'] ?>" style="width:15vw">
 			<div class="card-img-top flex-w-100 position-relative">
 				<?php if($_SESSION['login_type'] == 1): ?>
                 	<div class="dropdown position-absolute" style="right:.5em;top:.5em">
@@ -34,7 +34,7 @@
 	                  </div>
 	              <?php endif; ?>
 		<a href="index.php?page=view_genre&id=<?php echo $row['id'] ?>">
-				<img src="assets/uploads/<?php echo $row['cover_photo'] ?>" class="card-img-top"  style="object-fit: cover;max-width: 100%;height:26vh" alt="Genre Cover">
+				<img src="assets/uploads/<?php echo $row['cover_photo'] ?>" class="card-img-top rounded"  style="object-fit: cover;max-width: 100%;height:26vh" alt="Genre Cover">
 			</div>
 			<div class="card-body" style="height: 20vh">
 				<div class="card-title"><?php echo ucwords($row['genre']) ?></div>

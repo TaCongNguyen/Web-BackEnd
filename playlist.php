@@ -4,6 +4,7 @@
 		background: rgb(110,109,109);
 		background: radial-gradient(circle, rgba(110,109,109,1) 0%, rgba(55,54,54,1) 23%, rgba(28,27,27,1) 56%);
 	}
+	
 </style>
 <div class="col-lg-12">
 	<div class="d-flex justify-content-between align-items-center w-100">
@@ -19,12 +20,12 @@
 		</div>
 		<button class="btn btn-sm btn-primary bg-gradient-primary" type="button" id="manage_playlist"><i class="fa fa-plus"></i> Thêm playlist mới</button>
 	</div>
-	<div class="row" id="playlist-list">
+	<div class="row " id="playlist-list"  >
 		<?php 
 			$playlist= $conn->query("SELECT * FROM playlist order by title asc");
 			while($row=$playlist->fetch_assoc()):
 		?>
-		<div class="card bg-black playlist-item my-2 mx-1" date-id="<?php echo $row['id'] ?>" style="width:15vw">
+		<div class=" card bg-black playlist-item my-2 mx-0 rounded" date-id="<?php echo $row['id'] ?>" style="width:15vw"> 
 			<div class="card-img-top flex-w-100 position-relative">
 				<?php if($_SESSION['login_type'] == 1 || $_SESSION['login_id'] == $row['user_id'] ): ?>
                 	<div class="dropdown position-absolute" style="right:.5em;top:.5em">
@@ -39,7 +40,7 @@
 	                  </div>
 	              <?php endif; ?>
 		<a href="index.php?page=view_playlist&id=<?php echo $row['id'] ?>">
-				<img src="assets/uploads/<?php echo $row['cover_image'] ?>" class="card-img-top"  style="object-fit: cover;max-width: 100%;height:26vh" alt="playlist Cover">
+				<img src="assets/uploads/<?php echo $row['cover_image'] ?>" class="card-img-top rounded"  style="object-fit: cover;max-width: 100%;height:26vh" alt="playlist Cover">
 			</div>
 			<div class="card-body" style="height: 20vh">
 				<div class="card-title"><?php echo ucwords($row['title']) ?></div>
@@ -54,11 +55,11 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.delete_playlist').click(function(){
-	_conf("Are you sure to delete this Playlist?","delete_playlist",[$(this).attr('data-id')])
+	_conf("Bạn có muốn xoá playlist?","delete_playlist",[$(this).attr('data-id')])
 	})
 	$('#manage_playlist').click(function(e){
 		e.preventDefault()
-		uni_modal("New Playlist",'manage_playlist.php')
+		uni_modal("Playlist mới",'manage_playlist.php')
 	})
 	$('.edit_playlist').click(function(e){
 		e.preventDefault()
@@ -66,7 +67,7 @@
 	})
 	$('.manage_playlist').click(function(e){
 		e.preventDefault()
-		uni_modal("Mange Playlist Music",'manage_playlist_items.php?pid='+$(this).attr('data-id'))
+		uni_modal("Quản lí playlist",'manage_playlist_items.php?pid='+$(this).attr('data-id'))
 	})
 	})
 	check_list()
@@ -78,7 +79,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Lưu thành công",'success')
 					$('.modal').modal('hide')
 					_redirect(document.href)
 					end_load()

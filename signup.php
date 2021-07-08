@@ -46,10 +46,10 @@
 					</div>
 					<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" name="contact" class="form-control form-control-sm" required="" placeholder="Số điện thoại">
+								<input type="text" name="contact" class="form-control form-control-sm" required="" placeholder="Số điện thoại" required>
 							</div>
 							<div class="form-group">
-								<textarea id="" cols="30" rows="4" name="address" class="form-control" placeholder="Địa chỉ"></textarea>
+								<textarea id="" cols="30" rows="4" name="address" class="form-control" placeholder="Địa chỉ" required></textarea>
 							</div>
 						<div class="form-group">
 						<label for="" class="control-label">Ảnh đại diện</label>

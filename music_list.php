@@ -29,7 +29,7 @@
 				$desc = strtr(html_entity_decode($row['description']),$trans);
 				$desc=str_replace(array("<li>","</li>"), array("",", "), $desc);
 		?>
-		<div class="card bg-black music-item my-2 mx-1" data-id="<?php echo $row['id'] ?>" data-upath="<?php echo $row['upath'] ?>" style="width:15vw;cursor:pointer;">
+		<div class="card bg-black music-item my-2 mx-o rounded" data-id="<?php echo $row['id'] ?>" data-upath="<?php echo $row['upath'] ?>" style="width:15vw;cursor:pointer;">
 			<div class="card-img-top flex-w-100 position-relative py-2 px-3">
 				<?php if($_SESSION['login_type'] == 1 || $_SESSION['login_id'] == $row['user_id']): ?>
                 	<div class="dropdown position-absolute" style="right:.5em;top:.5em">
@@ -37,15 +37,15 @@
 	                    <i class="fa fa-ellipsis-v"></i>
 	                  </button>
 	                  <div class="dropdown-menu bg-dark">
-              			<a class="dropdown-item bg-dark" data-id="<?php echo $row['id'] ?>" href="index.php?page=edit_music&id=<?php echo $row['id'] ?>">Edit</a>
-              			<a class="dropdown-item delete_music bg-dark" data-id="<?php echo $row['id'] ?>" href="javascript:void(0)">Delete</a>
+              			<a class="dropdown-item bg-dark" data-id="<?php echo $row['id'] ?>" href="index.php?page=edit_music&id=<?php echo $row['id'] ?>">Sửa</a>
+              			<a class="dropdown-item delete_music bg-dark" data-id="<?php echo $row['id'] ?>" href="javascript:void(0)">Xoá</a>
 	                  </div>
 	                  </div>
 	              <?php endif; ?>
 				<span class="position-absolute" style="bottom:.5em;left:.5em;z-index: 2"><div class="btn bg-green rounded-circle d-flex justify-content-center align-items-center" style="width: 2rem;height: 2rem;cursor: pointer;" onclick="play_music({0:{id:'<?php echo $row['id'] ?>',upath:'assets/uploads/<?php echo $row['upath'] ?>'}})"><i class="fa fa-play"></i></div></span>
 		<a href="index.php?page=view_music&id=<?php echo $row['id'] ?>">
 
-				<img src="assets/uploads/<?php echo $row['cover_image'] ?>" class="card-img-top"  style="object-fit: cover;max-width: 100%;height:26vh" alt="music Cover">
+				<img src="assets/uploads/<?php echo $row['cover_image'] ?>" class="card-img-top rounded"  style="object-fit: cover;max-width: 100%;height:26vh" alt="music Cover">
 			</div>
 			<div class="card-body border-top border-primary" style="min-height:20vh">
 				<h5 class="card-title w-100"><?php echo ucwords($row['title']) ?></h5>

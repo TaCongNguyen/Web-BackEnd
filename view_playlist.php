@@ -9,7 +9,7 @@ foreach($qry as $k => $v){
 ?>
 
 <div class="col-lg-12">
-	<div class="row">
+	<div class="row ">
 		<div class="col-md-4">
 			<center>
 				<div class="d-flex img-thumbnail bg-gradient-1 position-relative" style="width: 12rem">
