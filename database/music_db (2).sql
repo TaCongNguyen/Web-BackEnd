@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 07, 2021 lúc 04:38 PM
--- Phiên bản máy phục vụ: 10.4.18-MariaDB
--- Phiên bản PHP: 8.0.3
+-- Thời gian đã tạo: Th7 08, 2021 lúc 03:55 AM
+-- Phiên bản máy phục vụ: 10.4.19-MariaDB
+-- Phiên bản PHP: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `music_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `contact_form_info`
+--
+
+CREATE TABLE `contact_form_info` (
+  `name` text NOT NULL,
+  `email` text NOT NULL,
+  `subject` text NOT NULL,
+  `comments` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `contact_form_info`
+--
+
+INSERT INTO `contact_form_info` (`name`, `email`, `subject`, `comments`) VALUES
+('Ta Nguyen', 'nguyensuperpro86@gmail.com', 'The database is error and the app can not find pokemon', ''),
+('Ta Nguyen', 'nguyensuperpro86@gmail.com', 'The database is error and the app can not find pokemon', ''),
+('Ta Nguyen', 'nguyensuperpro86@gmail.com', 'The database is error and the app can not find pokemon', 'ưdas'),
+('Ta Nguyen', 'nguyensuperpro86@gmail.com', 'df', 'sdf'),
+('Ta Nguyen', 'nguyensuperpro86@gmail.com', 'df', 'fhdgdfd'),
+('Ta Nguyen', 'nguyensuperpro86@gmail.com', 'Phản hồi', 'Cần giúp đỡ'),
+('Ta Nguyen', 'nguyensuperpro86@gmail.com', 'Phản hồi', 'Cần giúp đỡ');
 
 -- --------------------------------------------------------
 
@@ -190,19 +216,20 @@ CREATE TABLE `users` (
   `password` text NOT NULL,
   `type` int(1) NOT NULL DEFAULT 2,
   `profile_pic` text NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT current_timestamp()
+  `date_created` datetime NOT NULL DEFAULT current_timestamp(),
+  `reset_token` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `gender`, `contact`, `address`, `email`, `password`, `type`, `profile_pic`, `date_created`) VALUES
-(1, 'Administrator', 'Nguyen', 'Male', '0338345335', 'GenMusic', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', 1, '', '2020-11-18 16:50:06'),
-(2, 'Hà', 'Nam', 'Male', '0338345335', 'Sample address', 'jsmith@gmail.com', '1254737c076cf867dc53d60a0364f38e', 2, '1605833640_avatar.jpg', '2020-11-20 08:54:15'),
-(3, 'Ta', 'Nguyen', 'Female', 'Thu Duc', 'Thu Duc\r\nDi An', 'congnguyen@gmail.com', 'a41b2f705655b40ff330ff4a3a0dbb58', 2, '', '2021-07-05 19:27:27'),
-(4, 'Vươn', 'Ngoan', 'Female', '033243452424', 'Thu Duc\r\nDi An', 'yassuo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 2, '1625538060_1625537520_genshin.gif', '2021-07-06 09:21:36'),
-(5, 'hiep', 'ne', 'Female', '0367777777', '', 'hiepga2000.kt@gmail.com', '4f5cec75c744bd39b5126debbb7cffb8', 2, '', '2021-07-06 10:02:09');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `gender`, `contact`, `address`, `email`, `password`, `type`, `profile_pic`, `date_created`, `reset_token`) VALUES
+(1, 'Administrator', 'Nguyen', 'Male', '0338345335', 'GenMusic', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', 1, '', '2020-11-18 16:50:06', NULL),
+(2, 'Hà', 'Nam', 'Male', '0338345335', 'Sample address', 'jsmith@gmail.com', '1254737c076cf867dc53d60a0364f38e', 2, '1605833640_avatar.jpg', '2020-11-20 08:54:15', NULL),
+(3, 'Ta', 'Nguyen', 'Female', 'Thu Duc', 'Thu Duc\r\nDi An', 'congnguyen@gmail.com', 'a41b2f705655b40ff330ff4a3a0dbb58', 2, '', '2021-07-05 19:27:27', NULL),
+(4, 'Vươn', 'Ngoan', 'Female', '033243452424', 'Thu Duc\r\nDi An', 'yassuo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 2, '1625538060_1625537520_genshin.gif', '2021-07-06 09:21:36', NULL),
+(5, 'hiep', 'ne', 'Female', '0367777777', '', 'hiepga2000.kt@gmail.com', '4f5cec75c744bd39b5126debbb7cffb8', 2, '', '2021-07-06 10:02:09', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
