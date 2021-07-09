@@ -46,6 +46,11 @@ if($action == 'delete_user'){
 	if($save)
 		echo $save;
 }
+if($action == 'delete_contact'){
+	$save = $crud->delete_contact();
+	if($save)
+		echo $save;
+}
 if($action == 'save_genre'){
 	$save = $crud->save_genre();
 	if($save)

@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group text-dark">
-              <label for="" class="control-label">Thể loại</label>
+              <label for="" class="control-label">Thể loại tin tức</label>
               <select name="genre_id" id="genre_id" class="form-control select2 text-dark">
                 <option value=""></option>
                 <?php
@@ -50,7 +50,7 @@
           </div>
           <div class="col-md-10">
            <div class="form-group">
-              <label for="" class="control-label">Ảnh đại diện</label>
+              <label for="" class="control-label">Ảnh bìa</label>
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="customFile" name="cover" accept="image/*" onchange="displayImgCover(this,$(this))">
                   <label class="custom-file-label" for="customFile">Chọn file</label>

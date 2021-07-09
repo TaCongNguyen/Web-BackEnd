@@ -62,12 +62,6 @@
 	$('.delete_news').click(function(){
 	_conf("Bạn có chắc muốn xoá ?","delete_news",[$(this).attr('data-id')])
 	})
-	$('#manage_music').click(function(){
-		uni_modal("New music",'manage_music.php')
-	})
-	$('.edit_music').click(function(){
-		uni_modal("New music",'manage_music.php?id='+$(this).attr('data-id'))
-	})
 	check_list()
 	})
 	function delete_news($id){

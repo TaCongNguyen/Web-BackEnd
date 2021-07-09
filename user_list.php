@@ -57,7 +57,7 @@
 		uni_modal("<i class='fa fa-id-card'></i> User Details","view_user.php?id="+$(this).attr('data-id'))
 	})
 	$('.delete_user').click(function(){
-	_conf("Are you sure to delete this user?","delete_user",[$(this).attr('data-id')])
+	_conf("Bạn có muốn xoá playlist?","delete_user",[$(this).attr('data-id')])
 	})
 	})
 	function delete_user($id){
@@ -68,10 +68,10 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
-					setTimeout(function(){
-						location.reload()
-					},1500)
+					alert_toast("Thành công",'success')
+					$('.modal').modal('hide')
+					_redirect(document.href)
+					end_load()
 
 				}
 			}

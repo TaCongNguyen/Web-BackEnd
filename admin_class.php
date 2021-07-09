@@ -194,7 +194,14 @@ Class Action {
 	}
 	function delete_user(){
 		extract($_POST);
-		$delete = $this->db->query("DELETE FROM users where id = ".$id);
+		$delete = $this->db->query("DELETE FROM users where id = $id");
+		if($delete){
+			return 1;
+		}
+	}
+	function delete_contact(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM contact_form_info where id = ".$id);
 		if($delete)
 			return 1;
 	}

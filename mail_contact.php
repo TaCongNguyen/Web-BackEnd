@@ -15,19 +15,21 @@ if((isset($_POST['name'])&& $_POST['name'] !='') && (isset($_POST['email'])&& $_
     {
         ?>
         
-        <div class="jumbotron text-center">
-        <h3 class="display-3">Cảm ơn đã liên hệ với chúng tôi!</h3>
-        <p class="lead"><strong>Hãy kiểm tra email của bạn thường xuyên</strong> để xem phản hồi của chúng tôi.</p>
-        <hr>
-        <p>
-            Có vấn đề khác? <a href="./index.php?page=contact"> Liên hệ chúng tôi</a>
-        </p>
-        <p class="lead">
-            <a class="btn btn-primary " href="./index.php?page=home" role="button">Trở về trang chủ</a>
-        </p>
-        </div>
+        <div class="container padding-bottom-3x mb-2 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="forgot">
+                        <h2>Cảm ơn đã phản hồi, chúng tôi sẽ xem xét yêu cầu của bạn</h2>
+                    
+                        
+                    </div>
+                    
+                <div class="row justify-content-center  mx-auto"><a href="index.php?page=home"><button class="btn btn-danger" type="submit">Về trang chủ</button></a></div>
+                
+                </div>
+            </div>
+	    </div>
         <?php
-        
     }
 }
 else
@@ -59,4 +61,44 @@ echo"<p class='Error'>Đã có vấn đề xảy ra.</p>";
 ?>
  <head>
 	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	 
+       <style>
+          body {
+            background-position: center;
+            background-color: #eee;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #505050;
+            font-family: "Rubik", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.5;
+            text-transform: none;
+            background-image:url(./assets/uploads/background.jpg);
+        }
+
+        .forgot {
+            background-color: #fff;
+            padding: 12px;
+            border: 1px solid #dfdfdf;
+            border-radius: 10px;
+        }
+
+        .padding-bottom-3x {
+            padding-bottom: 72px !important
+        }
+
+        .card-footer {
+            background-color: #fff
+        }
+
+        .btn {
+            font-size: 13px
+        }
+
+       
+        .mx-auto{
+          margin-top: 20px;
+        }
+		</style>
 </head>

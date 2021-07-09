@@ -19,8 +19,8 @@
 						<div class="form-group">
 							<label for="" class="control-label">Giới tính</label>
 							<select class="custom-select custom-select-sm">
-							<option <?php echo  isset($gender) && $gender =='Female'?'selected' : "" ?>>Nữ</option>
-							<option <?php echo  isset($gender) && $gender =='Male'?'selected' : "" ?>>Nam</option>
+							<option <?php echo  isset($gender) && $gender =='Nữ'?'selected' : "" ?>>Nữ</option>
+							<option <?php echo  isset($gender) && $gender =='Nam'?'selected' : "" ?>>Nam</option>
 							</select>
 						</div>
 						<div class="form-group">

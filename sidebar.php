@@ -49,7 +49,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link nav-is-tree nav-edit_music nav-view_music">
+            <a href="#" class="nav-link nav-is-tree nav-edit_news nav-view_news">
               <i class="nav-icon fas fa-newspaper text-gradient-primary"></i>
               <p>
                 Tin tức âm nhạc
@@ -59,7 +59,7 @@
             <ul class="nav nav-treeview">
             <?php if($_SESSION['login_type'] == 1): ?>
               <li class="nav-item">
-              <a href="./index.php?page=new_news" class=" ml-1 nav-link nav-new_music tree-item">
+              <a href="./index.php?page=new_news" class=" ml-1 nav-link nav-new_news tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p class="">Thêm mới tin tức</p>
                 </a>
@@ -67,7 +67,7 @@
             <?php endif; ?>
               
               <li class="nav-item">
-                <a href="./index.php?page=news_list" class=" ml-1 nav-link nav-music_list tree-item">
+                <a href="./index.php?page=news_list" class=" ml-1 nav-link nav-news_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p class="">Danh sách tin tức</p>
                 </a>
@@ -89,12 +89,22 @@
           </li>  
           <?php if($_SESSION['login_type'] != 1): ?>
           <li class="nav-item">
-                <a href="./index.php?page=contact" class="nav-link nav-user_list tree-item">
+                <a href="./index.php?page=contact" class="nav-link nav-contact tree-item">
                   <i class="fas fa-users nav-icon  text-gradient-primary"></i>
                   <p>Liên hệ</p>
                 </a>
           </li> 
           <?php endif; ?>
+
+          <?php if($_SESSION['login_type'] == 1): ?>
+          <li class="nav-item">
+                <a href="./index.php?page=contact_list" class="nav-link nav-contact_list tree-item">
+                  <i class="fas fa-comment-dots nav-icon  text-gradient-primary"></i>
+                  <p>Quản lí phản hồi</p>
+                </a>
+          </li> 
+          <?php endif; ?>
+
           <?php if($_SESSION['login_type'] == 1): ?>
           <li class="nav-item">
                 <a href="./index.php?page=user_list" class="nav-link nav-user_list tree-item">
