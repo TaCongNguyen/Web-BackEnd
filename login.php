@@ -203,7 +203,7 @@ header("location:index.php?page=home");
 	      })
 	  }
 	$('#new_account').click(function(){
-		uni_modal("<h4>Sign Up</h4><span><h6 class='text-muted'>Nhanh và dễ dàng.</h6></span>","signup.php","large")
+		uni_modal("<h4>Sign Up</h4><span><h6 class='text-muted'>It’s quick and easy.</h6></span>","signup.php","large")
 	})
 	$('#login-form').submit(function(e){
 		e.preventDefault()
