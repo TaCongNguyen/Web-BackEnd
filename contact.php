@@ -127,7 +127,7 @@
 
 </section>
 <div class="row text-primary">
-    <h2>Hiên hệ trực tiếp chúng tôi tại đây.</h2>
+    <h2>Liên hệ trực tiếp chúng tôi tại đây.</h2>
 </div>
 <div class="row">
 <div class="contact_map">
